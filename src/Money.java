@@ -2,7 +2,7 @@
  * Created by Matthew on 18/10/2015.
  * Test-Drive Development By Example.
  */
-abstract public class Money {
+public class Money {
 
     protected int amount;
     protected String currency;
@@ -20,14 +20,20 @@ abstract public class Money {
         return new Franc(amount, "CHF");
     }
 
-    abstract Money times(int multiplier);
+    Money times(int multiplier) {
+        return new Money(amount * multiplier, currency);
+    }
 
     public boolean equals(Object object) {
         Money money = (Money) object;
-        return amount == money.amount && getClass().equals(money.getClass());
+        return amount == money.amount && currency().equals(money.currency());
     }
 
     String currency() {
         return currency;
+    }
+
+    public String toString() {
+        return amount + " " + currency;
     }
 }
