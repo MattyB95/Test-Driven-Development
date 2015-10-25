@@ -25,6 +25,7 @@ public class Money implements Expression {
         return new Money(amount * multiplier, currency);
     }
 
+    @SuppressWarnings("EqualsWhichDoesntCheckParameterClass")
     public boolean equals(Object object) {
         Money money = (Money) object;
         return amount == money.amount && currency().equals(money.currency());

@@ -13,6 +13,7 @@ public class Pair {
         this.to = to;
     }
 
+    @SuppressWarnings("EqualsWhichDoesntCheckParameterClass")
     public boolean equals(Object object) {
         Pair pair = (Pair) object;
         return from.equals(pair.from) && to.equals(pair.to);
