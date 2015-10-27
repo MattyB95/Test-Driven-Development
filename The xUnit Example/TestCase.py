@@ -6,13 +6,14 @@ class TestCase:
         self.name = name
 
     def run(self, result):
-        result.testStarted()
+        result.test_started()
         self.set_up()
+        # noinspection PyBroadException
         try:
             method = getattr(self, self.name)
             method()
         except:
-            result.testFailed()
+            result.test_failed()
         self.tear_down()
 
     def set_up(self):

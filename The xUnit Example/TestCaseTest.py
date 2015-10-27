@@ -23,21 +23,21 @@ class TestCaseTest(unittest.TestCase):
         assert "1 run, 0 failed" == self.result.summary()
 
     def testFailedResult(self):
-        test = WasRun("testBrokenMethod")
+        test = WasRun("test_broken_method")
         test.run(self.result)
-        assert "1 run, 1 failed", self.result.summary
+        assert "1 run, 1 failed", self.result.summary()
 
     def testFailedResultFormatting(self):
-        self.result.testStarted()
-        self.result.testFailed()
+        self.result.test_started()
+        self.result.test_failed()
         assert "1 run, 1 failed" == self.result.summary()
 
     def testSuite(self):
-        suite = TestSuite()
-        suite.add(WasRun("testMethod"))
-        suite.add(WasRun("testBrokenMethod"))
-        suite.run(self.result)
-        assert "2 run, 1 failed" == result.summary()
+        test_suite = TestSuite()
+        test_suite.add(WasRun("test_method"))
+        test_suite.add(WasRun("test_broken_method"))
+        test_suite.run(self.result)
+        assert "2 run, 1 failed" == self.result.summary()
 
 
 suite = TestSuite()

@@ -1,5 +1,3 @@
-from TestCase import TestCase
-
 __author__ = 'Matthew'
 
 
