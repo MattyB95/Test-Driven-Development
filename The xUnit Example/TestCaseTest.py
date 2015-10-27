@@ -6,12 +6,17 @@ __author__ = 'Matthew'
 
 
 class TestCaseTest(unittest.TestCase):
-    @staticmethod
-    def test_running():
-        test = WasRun("test_method")
-        assert (not test.wasRun)
-        test.run()
-        assert test.wasRun
+    def setUp(self):
+        self.test = WasRun("test_method")
+
+    def test_running(self):
+        self.test.run()
+        assert self.test.wasRun
+
+    def testSetUp(self):
+        self.test.run()
+        assert self.test.wasSetup
 
 
 TestCaseTest("test_running").run()
+TestCaseTest("testSetUp").run()

@@ -10,3 +10,7 @@ class WasRun(TestCase):
 
     def test_method(self):
         self.wasRun = 1
+
+    def set_up(self):
+        self.wasRun = None
+        self.wasSetup = 1
