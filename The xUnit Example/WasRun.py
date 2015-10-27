@@ -8,9 +8,11 @@ class WasRun(TestCase):
         self.wasRun = None
         TestCase.__init__(self, name)
 
-    def test_method(self):
-        self.wasRun = 1
-
     def set_up(self):
-        self.wasRun = None
-        self.wasSetup = 1
+        self.log = "setUp "
+
+    def test_method(self):
+        self.log = self.log + "testMethod "
+
+    def tear_down(self):
+        self.log = self.log + "tearDown "
