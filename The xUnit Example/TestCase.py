@@ -1,5 +1,3 @@
-from TestResult import TestResult
-
 __author__ = 'Matthew'
 
 
@@ -7,8 +5,7 @@ class TestCase:
     def __init__(self, name):
         self.name = name
 
-    def run(self):
-        result = TestResult()
+    def run(self, result):
         result.testStarted()
         self.set_up()
         try:
@@ -17,7 +14,6 @@ class TestCase:
         except:
             result.testFailed()
         self.tear_down()
-        return result
 
     def set_up(self):
         pass
