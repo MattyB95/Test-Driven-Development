@@ -1,6 +1,3 @@
-__author__ = 'Matthew'
-
-
 class TestSuite:
     def __init__(self):
         self.tests = []

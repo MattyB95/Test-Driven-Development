@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.Contract;
+
 /**
  * Created by Matthew on 18/10/2015.
  * Test-Drive Development By Example.
@@ -13,10 +15,12 @@ public class Money implements Expression {
         this.currency = currency;
     }
 
+    @Contract("_ -> !null")
     static Money dollar(int amount) {
         return new Money(amount, "USD");
     }
 
+    @Contract("_ -> !null")
     static Money franc(int amount) {
         return new Money(amount, "CHF");
     }

@@ -1,6 +1,3 @@
-__author__ = 'Matthew'
-
-
 class TestResult:
     def __init__(self):
         self.runCount = 0
